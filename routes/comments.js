@@ -23,7 +23,7 @@ router.post("/apartments/:id/comments",middleware.isLoggedIn,function(req, res){
    Apartment.findById(req.params.id, function(err, apartment){
        if(err){
            console.log(err);
-           res.redirect("/RentApartman/apartments");
+           res.redirect("/apartments");
        } else {
         Comment.create(req.body.comment, function(err, comment){
            if(err){
@@ -39,7 +39,7 @@ router.post("/apartments/:id/comments",middleware.isLoggedIn,function(req, res){
                apartment.save();
                console.log(comment);
                req.flash("success","Uspješno dodan komentar")
-               res.redirect('/RentApartman/apartments/' + apartment._id);
+               res.redirect('/apartments/' + apartment._id);
            }
         });
        }
@@ -69,7 +69,7 @@ router.put("/apartments/:id/comments/:comment_id", middleware.checkCommentOwners
       if(err){
           res.redirect("back");
       } else {
-          res.redirect("apartments/" + req.params.id );
+          res.redirect("/apartments/" + req.params.id );
       }
    });
 });

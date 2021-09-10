@@ -11,7 +11,7 @@
              </p>
              <% }%>
              <p>
-                 <form action="apartments" method="GET" class="form-inline">
+                 <form action="/apartments" method="GET" class="form-inline">
                      <div class="form-group">
                          <input type="text" name="search" placeholder="Pretrazivanje apartmana.." class="form-control">
                          <input type="submit" name="earch" class="btn btn-default">
@@ -35,7 +35,7 @@
                        <h4><%= apartment.name %></h4>
                    </div>
                    <p>
-                       <a href="apartments/<%= apartment._id %>" class="btn btn-primary">Više informacija</a>
+                       <a href="/apartments/<%= apartment._id %>" class="btn btn-primary">Više informacija</a>
                    </p>
                 </div>
             </div>
